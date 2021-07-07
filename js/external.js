@@ -61,12 +61,20 @@
 //
 // alert("Total payment for contract work is $" + totalPay.toFixed(2));
 // ========== School Enrollment
-var classIsNotFull = confirm("Confirm that the class is not full");
-var classScheduleCheck = confirm("Confirm that the schedule checks out");
-
-var studentEnrolled = classIsNotFull && classScheduleCheck;
-alert("Student enrollment status: " + studentEnrolled);
+// var classIsNotFull = confirm("Confirm that the class is not full");
+// var classScheduleCheck = confirm("Confirm that the schedule checks out");
+//
+// var studentEnrolled = classIsNotFull && classScheduleCheck;
+// alert("Student enrollment status: " + studentEnrolled);
 // ========== Product Offer
+// var discountBreakPoint = 2;
+// var numberOfItems = prompt("How many items were bought?");
+// var offerIsNotExpired = confirm("Confirm offer has not expired.");
+// var isPremiumMember = confirm("Customer is a premium member");
+//
+// var productDiscountIsApplied = offerIsNotExpired && (isPremiumMember || numberOfItems >= discountBreakPoint);
+//
+// alert("Product discount applied: " + productDiscountIsApplied);
 
 
 
