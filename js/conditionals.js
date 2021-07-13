@@ -23,17 +23,17 @@ console.log("working");
  */
 // THIS IS A FUNCTION THAT IS USING CONDITIONAL LOGIC!!!
 // function declaration syntax
-// function analyzeColor(input) {
-//     if (input === "blue"){
-//         return Blue is the color of the sky";
-//     } else if (input === "red") {
-//         return "Strawberries are red"
-//     } else if (input === "cyan") {
-//         return "I don\'t know anything about cyan"
-//     } else {
-//         return "Sorry, I don\'t know anything about " + input;
-//     }
-// }
+function analyzeColor(input) {
+    if (input === "blue"){
+        return Blue is the color of the sky";
+    } else if (input === "red") {
+        return "Strawberries are red"
+    } else if (input === "cyan") {
+        return "I don\'t know anything about cyan"
+    } else {
+        return "Sorry, I don\'t know anything about " + input;
+    }
+}
 // MAKE SURE THAT WHEN YOU CONSOLE.LOG THAT YOU ARE INDICATING WHAT YOU WANT IT TO CHECK FOR
 // IF YOU JUST CONSOLE.LOG(ANALYZECOLOR); IT WONT WORK RIGHT!!
 console.log(analyzeColor('blue'));
@@ -52,38 +52,38 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Pass the `randomColor` variable to your function and console.log the results.
  * You should see a different message every time you refresh the page
  */
-// console.log(analyzeColor(randomColor));
+console.log(analyzeColor(randomColor));
 /**
  * TODO: DONE
  * Refactor your above function to use a switch-case statement
  */
-// function analyzeColor(input) {
-//     if (input === "blue"){
-//         return "blue is the color of the sky"
-//     } else if (input === "red"){
-//         return "Strawberries are red"
-//     } else if (input === "cyan"){
-//         return "I don't know anything about cyan"
-//     } else {
-//         return "Sorry, I don't know anything about that color!"
-//     }
-// }
-// console.log(analyzeColor);
-// var analyzeColor = prompt("What is your favorite color?");
-//
-// switch (analyzeColor) {
-//     case "blue":
-//         alert("Great choice! Blue is the color of the sky.");
-//         break;
-//     case "red":
-//         alert("Nice choice! Strawberries are red.");
-//         break;
-//     case "cyan":
-//         alert("Sorry, I don't know anything about that color!");
-//         break;
-//     default:
-//         alert("I'm not familiar with that color.");
-// }
+function analyzeColor(input) {
+    if (input === "blue"){
+        return "blue is the color of the sky"
+    } else if (input === "red"){
+        return "Strawberries are red"
+    } else if (input === "cyan"){
+        return "I don't know anything about cyan"
+    } else {
+        return "Sorry, I don't know anything about that color!"
+    }
+}
+console.log(analyzeColor);
+var analyzeColor = prompt("What is your favorite color?");
+
+switch (analyzeColor) {
+    case "blue":
+        alert("Great choice! Blue is the color of the sky.");
+        break;
+    case "red":
+        alert("Nice choice! Strawberries are red.");
+        break;
+    case "cyan":
+        alert("Sorry, I don't know anything about that color!");
+        break;
+    default:
+        alert("I'm not familiar with that color.");
+}
 
 /**
  * TODO: DONE
@@ -95,7 +95,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
 /* ########################################################################## */
 
 /**
- * TODO:
+ * TODO: DONE
  * Suppose there's a promotion in Walmart, each customer is given a randomly
  * generated "lucky number" between 0 and 5. If your lucky number is 0 you have
  * no discount, if your lucky number is 1 you'll get a 10% discount, if it's 2,
@@ -113,19 +113,51 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
-// function calculateTotal(luckyNumber, totalAmount) {
-// =
-// }
+function calculateTotal(luckyNumber, totalAmount) {
+    var discountNumber;
+    switch (luckyNumber) {
+        case 0:
+            discountNumber = 0;
+            break;
+        case 1:
+            discountNumber = .1;
+            break;
+        case 2:
+            discountNumber = .25;
+            break;
+        case 3:
+            discountNumber = .35;
+            break;
+        case 4:
+            discountNumber = .5;
+            break;
+        case 5:
+            discountNumber = 1;
+            break;
+        default:
+            console.log('invalid input');
+    }
+    return totalAmount - (discountNumber * totalAmount);
+}
+
+console.log(calculateTotal(0, 100), 100) //returns 100
+console.log(calculateTotal(4, 100), 50) //returns 50
+console.log(calculateTotal(5, 100), 0) //returns 0
 /**
- * TODO:
+ * TODO: DONE
  * Uncomment the line below to generate a random number between 0 and 6.
  * Prompt the user for their total bill, then use your `calculateTotal` function
  * and alerts to display to the user what their lucky number was, what their
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+var luckyNumber = Math.floor(Math.random() * 6);
 
+var totalBill = parseFloat(prompt("What is the total bill in dollars?"));
+var message = 'Your lucky number is: ' + luckyNumber + '. '
+    + 'Your price before the discount is: $' + totalBill + '. '
+    + 'Your price after the discount is: $' + calculateTotal(luckyNumber, totalBill) + '.';
+alert(message);
 /**
  * TODO:
  * Write some JavaScript that uses a `confirm` dialog to ask the user if they
