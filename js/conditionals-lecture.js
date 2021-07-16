@@ -33,4 +33,4 @@
 
 //refactor
 var flavor = prompt("Welcome to Codeup Ice Cream! What is your favorite flavor?");
-function getIceCreamOrder(flavor)
+function getIceCreamOrder(flavor);

@@ -23,8 +23,26 @@ while (i < 10) {
  */
 
 
-// #2:
+/* #2: Create a while loop that uses console.log() to create the output shown below.
+2
+4
+8
+16
+32
+64
+128
+256
+512
+1024
+2048
+4096
+8192
+16384
+32768
+65536
 var i = 1;
+
+ */
 
 while (i < 65536) {
     i = i * 2
@@ -49,7 +67,8 @@ do {
 } while (i < 10);
 */
 
-// #3: Ice cream seller problem
+// #3: Do While Loop Exercise
+// Ice cream seller problem
 // Javier went through this in class on 7/15/21 GO OVER IT ASAP
 
 var allCones = Math.floor(Math.random() * 50) + 50;
