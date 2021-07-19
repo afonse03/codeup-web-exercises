@@ -43,6 +43,7 @@
 
     // #5:
     console.log('Finding and logging the index of "Earth" in the planets array.');
+
     var index = planets.indexOf('Earth');
     console.log(index);
     // the return is that the index of Earth is 2 which is correct
