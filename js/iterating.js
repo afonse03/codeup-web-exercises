@@ -63,12 +63,16 @@
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
     function firstArray(array) {
-        return array[0];
+        if(Array.isArray(array)) {
+            return array[0];
+        }
     }
     console.log(firstArray(names));
 
     function secondArray(array) {
-        return array[1];
+        if(Array.isArray(array)) {
+            return array[1];
+        }
     }
     console.log(secondArray(names));
 
@@ -78,4 +82,3 @@
     }
     console.log(thirdArray(names));
 })();
-//
