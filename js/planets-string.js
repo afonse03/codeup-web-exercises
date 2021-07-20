@@ -1,8 +1,5 @@
-/*
-I'm having a hard time completing the first exercise because I don't know how to add commas in between the planets and I don't know how to make the string into an array.
- */
 
-
+// PUSH THIS TO GITHUB WHEN SCHOOL IS OVER!!
 (function(){
     "use strict";
 
@@ -14,8 +11,11 @@ I'm having a hard time completing the first exercise because I don't know how to
      */
     var planetsString = "Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune";
 
-    var planetsArray = planetsString.split(',');
+    var planetsArray = planetsString.split('|');
     console.log(planetsArray);
+
+    // var planetsArray = planetsString.split(',');
+    // console.log(planetsArray);
 
 
 //     var namesString = "Joe,Bob,Sally";
@@ -40,4 +40,8 @@ I'm having a hard time completing the first exercise because I don't know how to
      * string, and <li> tags around each planet.
      */
 
+    var planetsWithBrs = planetsArray.join('<br>');
+
+    var planetsHTML = '<ul></ul>' + planetsArray.join('</li><li>') + '</li></ul>';
+    console.log(planetsHTML);
 })();
