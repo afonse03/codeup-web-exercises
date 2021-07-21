@@ -2,7 +2,7 @@
     "use strict";
 
     /**
-     * TODO:
+     * TODO: DONE
      * Create an object with firstName and lastName properties that are strings with your first and last name. Store this object in a variable named `person`.
      *
      * Example:
@@ -11,7 +11,7 @@
      */
 
     var person = {
-        firstName: "Amanda", //the reason why you weren't getting any output is because you forgot to add the comma
+        firstName: "Amanda", //the reason why you weren't getting any output is because you forgot to add the comma; firstName is the property and "Amanda" is the value
         lastName: "Fonseca"
     };
 
@@ -19,7 +19,7 @@
     console.log(person.lastName);
 
     /**
-     * TODO:
+     * TODO: DONE
      * Add a sayHello method to the person object that returns a    greeting using the firstName and lastName properties.
      * console.log the returned message to check your work
      *
@@ -31,14 +31,14 @@
         firstName: "Amanda",
         lastName: "Fonseca",
         sayHello: function(firstName, lastName) {
-            console.log( "Hello, this is " + this.firstName + " " + this.lastName + "!");
+            console.log( "Hello, this is " + this.firstName + " " + this.lastName + "!"); // this is a keyword assigned to objects
         }
     }
 
     console.log(person.sayHello());
 
 
-    /** TODO:
+    /** TODO: DONE
      * HEB has an offer for the shoppers that buy products amounting to more than $200. If a shopper spends more than $200, they get a 12% discount. Write a JS program, using conditionals, that logs to the browser, how much Ryan, Cameron and George need to pay. We know that Cameron bought $180, Ryan $250 and George $320. Your program will have to display a line with the name of the person, the amount before the discount, the discount, if any, and the amount after the discount.
      *
      * Uncomment the lines below to create an array of objects where each object represents one shopper. Use a foreach loop to iterate through the array, and console.log the relevant messages for each person.
@@ -47,10 +47,19 @@
         // Cameron spent $180 (no discount), Ryan spent $250 (gets discount), George spent $320 (gets discount)
 
     var shoppers = [
-        {name: 'Cameron', amount: 180, },
+        {name: 'Cameron', amount: 180},
         {name: 'Ryan', amount: 250},
         {name: 'George', amount: 320}
     ];
+// forEach is a function, not a method
+    shoppers.forEach(function(shopper) {
+        if (shopper.amount > 200) {
+            console.log(shopper.name + ": This shopper spent $" + shopper.amount + " and qualifies for the discount! The total is now $" + (shopper.amount - shopper.amount * 0.12) + "!")
+        } else if (shopper.amount < 200) {
+            console.log(shopper.name + ": This shopper spent $" + shopper.amount + " and does not qualify for the discount. Sorry! Spend more next time to get the discount.")
+        }
+
+    });
 
     /** TODO:
      * Create an array of objects that represent books and store it in a variable named `books`. Each object should have a title and an author property. The author property should be an object with properties `firstName` and `lastName`. Be creative and add at least 5 books to the array.
@@ -61,7 +70,13 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
-    /**
+    var books = [
+        {Title: "Black Beauty", Author:{firstName: "Anna", lastName: "Sewell"}},
+        {Title: ""}
+    ]
+
+
+    /***
      * TODO:
      * Loop through the books array and output the following information about each book:
      * - the book number (use the index of the book in the array)
