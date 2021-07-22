@@ -45,6 +45,7 @@
      */
     // if shopper spends > $200 they receive 12% off total
         // Cameron spent $180 (no discount), Ryan spent $250 (gets discount), George spent $320 (gets discount)
+        // Justin wanted us to solve it as a human, then he created a pure function, then introduced a for loop, then refactored using a for each loop. Learn how to do that to be an expert.
 
     var shoppers = [
         {name: 'Cameron', amount: 180},
@@ -61,6 +62,15 @@
 
     });
 
+    // for (var i = 0; i < shoppers.length; i += 1) { // this is an example of a for loop
+    //     var discountedAmount = calculateDiscount(shoppers[i].amount, discountThreshold, discountPercentage);
+    //     var output = shoppers[i].name + ' is purchasing ' + shoppers[i].amount +
+    //         ' of stuff. He will get ' + discountedAmount +
+    //         ' off the purchase and pay ' +
+    //         (shoppers[i].amount - discountedAmount) + '.';
+    //     console.log(output);
+    // }
+
     /** TODO:
      * Create an array of objects that represent books and store it in a variable named `books`. Each object should have a title and an author property. The author property should be an object with properties `firstName` and `lastName`. Be creative and add at least 5 books to the array.
      *
@@ -71,9 +81,36 @@
      */
 
     var books = [
-        {Title: "Black Beauty", Author:{firstName: "Anna", lastName: "Sewell"}},
-        {Title: ""}
-    ]
+        {
+            Title: "Black Beauty", Author: {
+                firstName: "Anna",
+                lastName: "Sewell"}
+        } ,
+        {
+            Title: "Rewilding the World", Author: {
+                firstName: "Caroline",
+                lastName: "Fraser"}
+        } ,
+        {
+            Title: "Natural Wonders of the World", Author: {
+                firstName: "Smithsonian",
+                lastName: "Library"}
+        } ,
+        {
+            Title: "Silence", Author: {
+                firstName: "Natasha",
+                lastName: "Preston"}
+        } ,
+        {
+            Title: "Cobblers", Author: {
+                firstName: "Emeril",
+                lastName: "Lagasse"}
+        } ,
+    ];
+
+console.log(books[0].title);
+console.log(books[0].Author.firstName);
+console.log(books[0].Author.lastName);
 
 
     /***
