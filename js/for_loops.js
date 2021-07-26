@@ -1,36 +1,5 @@
 "use strict";
-// var i = 0;
-// function showMultiplicationTable(number) {
-//     return (number * i);
-// }
-
-// function showMultiplicationTable(number) {
-//     for (var i = 1; i <= 10; i++) //shorthand loop
-//         console.log(i + " x " + number + " = " + (i * number));
-// }
-// console.log(showMultiplicationTable(7));
-
-// function showMultiplicationTable(number) {
-//     for (var i = 1; i <= 10; i++)
-// }
-
-// var table = 1;
-// var count = 10;
-//
-// for (var i = 0; i < count; i++) {
-//     i++;
-//     console.log(table, "x", i, "=", table * i);
-//     --i;
-// }
-
-// var multiplier = 7;
-// for (var i = 3; i <= 8; i += 2) {
-//     var result = multiplier * i;
-//     console.log(multiplier + i + '=' + result);
-// }
-
-// Walkthrough of this Exercise
-
+//For Loops Exercise:
 /* #2: Create a function named showMultiplicationTable that accepts a number and console.logs the multiplication table for that number (just multiply by the numbers 1 through 10)
 
 For example, showMultiplicationTable(7) should output
@@ -51,17 +20,22 @@ For example, showMultiplicationTable(7) should output
 function showMultiplicationTable(number) {
     for (numberWeMultiplyBy = 1; numberWeMultiplyBy <= 10; numberWeMultiplyBy++) {
         console.log(number + " x " + numberWeMultiplyBy + " = " + number * numberWeMultiplyBy);
+
     }
+
 }
 
 var number = 7;
-// console.log(number + " * 1 = " + number * 1);
-// console.log(number + " * 2 = " + number * 2);
-// console.log(number + " * 3 = " + number * 3);
-
-for (numberWeMultiplyBy = 1; numberWeMultiplyBy <= 10; numberWeMultiplyBy++) {
-    console.log(number + " * 1 = " + number * 1);
-}
+console.log(number + " x 1 = " + number * 1);
+console.log(number + " x 2 = " + number * 2);
+console.log(number + " x 3 = " + number * 3);
+console.log(number + " x 4 = " + number * 4);
+console.log(number + " x 5 = " + number * 5);
+console.log(number + " x 6 = " + number * 6);
+console.log(number + " x 7 = " + number * 7);
+console.log(number + " x 8 = " + number * 8);
+console.log(number + " x 9 = " + number * 9);
+console.log(number + " x 10 = " + number * 10);
 
 
 
@@ -73,7 +47,10 @@ for (numberWeMultiplyBy = 1; numberWeMultiplyBy <= 10; numberWeMultiplyBy++) {
 199 is odd
 ...
  */
-
+var i = 0;
+for (i=0; i<500; i++) {
+    console.log(Math.ceil((Math.random() * 180 ) + 20));
+}
 
 
 /* #4: Create a for loop that uses console.log to create the output shown below.
@@ -114,4 +91,44 @@ for (numberWeMultiplyBy = 1; numberWeMultiplyBy <= 10; numberWeMultiplyBy++) {
 15
 10
 5
+ */
+
+
+
+
+
+
+
+
+
+/* Additional Notes
+// var i = 0;
+// function showMultiplicationTable(number) {
+//     return (number * i);
+// }
+
+// function showMultiplicationTable(number) {
+//     for (var i = 1; i <= 10; i++) //shorthand loop
+//         console.log(i + " x " + number + " = " + (i * number));
+// }
+// console.log(showMultiplicationTable(7));
+
+// function showMultiplicationTable(number) {
+//     for (var i = 1; i <= 10; i++)
+// }
+
+// var table = 1;
+// var count = 10;
+//
+// for (var i = 0; i < count; i++) {
+//     i++;
+//     console.log(table, "x", i, "=", table * i);
+//     --i;
+// }
+
+// var multiplier = 7;
+// for (var i = 3; i <= 8; i += 2) {
+//     var result = multiplier * i;
+//     console.log(multiplier + i + '=' + result);
+// }
  */
