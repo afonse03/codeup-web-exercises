@@ -3,5 +3,55 @@ this file is named "style.css" and is in a directory named "css"
 */
 
 .fancy-header {
-    color: purple;
+    color: peachpuff;
+    font-family: 'Lexend', sans-serif;
+
+}
+
+h2 {
+    color: rebeccapurple;
+    text-decoration: underline;
+    font-family: 'STIX Two Math', serif;
+}
+
+body {
+    background-color: navajowhite;
+    background-image: url("../img/sparkly-background.jpeg");
+    background-size: cover;
+    font-family: 'STIX Two Math', serif;
+}
+
+ul {
+    list-style: square;
+    font-family: 'Lexend', sans-serif;
+}
+
+ol {
+    list-style: upper-roman;
+    font-family: 'Lexend', sans-serif;
+}
+
+th {
+    font-family: 'STIX Two Math', serif;
+}
+
+tr {
+    font-family: 'Lexend', sans-serif;
+}
+
+table, th, tr {
+    border: 3px solid black;
+    width: 40%
+}
+
+a:visited {
+    color: darkred;
+}
+
+a:hover {
+    color: hotpink;
+}
+
+a:active {
+    color: blue;
 }
