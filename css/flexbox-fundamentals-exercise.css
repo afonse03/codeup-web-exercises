@@ -1,0 +1,159 @@
+* {box-sizing: border-box;}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: lightskyblue;
+    font-family: Chalkboard, sans-serif;
+}
+
+h1 {text-align: center;} /* This part of the code is the Flexbox Fundamentals Exercise title on the top of the webpage */
+
+h2, h3 {
+    /* I'm not too sure but I assume by the tags that this is for the headings */
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    /* This part of the code moves the entire exercise to the right side */
+    margin: 0 auto;
+    width: 80%;
+}
+
+.green-box {
+    /* This part of the code is for the dark green squares but it doesn't cover the black outline */
+    background: green;
+    height: 1em;
+    width: 2em;
+}
+
+.border {border: 2px solid black;} /* This part of the code is for the black outline on all of the shapes except the oranges circles */
+
+.card {
+    /* This part of the code is for the white container in the back of everything */
+    width: 400px;
+    height: 800px;
+    background: white;
+    padding: 1em;
+    margin: 0 auto;
+    /* enter needed declarations here */
+    /* I didn't add anything here because I don't think it needs anything else to be edited to look like the exercise example */
+}
+
+section { /* is "section" the parent class declaration block/flex container? It looks like this part of the code affects everything but the green boxes and their black outline. The headings are still visible if you shut this part of the code off. */
+    display: flex; /* we are using the css declaration display:flex to position the items. display: flex | inline-flex. */
+    align-items: center; /* align-items may be used to align items within each individual row/column. Align-items and align-self. Flex items can be aligned in the cross axis of the current line of the flex container, similar to justify-content but in the perpendicular direction. Align-items sets the default alignment for all of the flex container's items. align-items: stretch | flex-start | flex-end | center | baseline | auto. */
+    justify-content: space-between; /* justify-content property aligns flex items along the main axis of the current line of the flex container. This is done AFTER any flexible lengths and any auto margins have been resolved. justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly. */
+    margin-top: 1em; /* I put my margins here on the section because it changes it to everything instead of having to add it manually*/
+    margin-bottom: 1em;
+    /* enter needed declarations here */
+}
+
+section:nth-of-type(1) {
+    /* This part of the code is the light green container with the dark green rectangles on it */
+    height: 3em;
+    background: lightgreen;
+    /* enter needed declarations here */
+}
+section:nth-of-type(1) div:last-child {
+    /* This part of the code is the dark green rectangle on the far right that needs to be pushed up */
+    align-self: flex-start; /* align-self allows this default alignment to be overridden for individual flex items. For anonymous flex items, align-self always matches the value of align-items on their associated flex container. align-self: auto | stretch | flex-start | flex-end | center | baseline */
+    /* enter needed declarations here */
+}
+
+.purple-box {
+    /* This part of the code is for the pink elongated rectangles but it doesn't cover the black outline */
+    background: fuchsia;
+    width: 3em;
+    height: 1em;
+}
+
+.purple-box:nth-of-type(1) {
+    /* This part of the code moves the left and middle pink rectangle. It moved the content in the far left rectangle to go more toward the middle rectangle */
+    flex-grow: 2;
+    /* enter needed declarations here */
+}
+
+.purple-box:nth-of-type(2) {
+    /* This part of the code moves the far left rectangle even more into the space of the middle pink rectangle */
+    flex-grow: 1;
+    /* enter needed declarations here */
+}
+
+.blue-box {
+    /* This part of the code is for the blue rectangle but it doesn't cover the black outline */
+    width: 100%;
+    background: blue;
+    height: 10em;
+}
+
+section:nth-of-type(3) {
+    /* I'm not sure what this code does to the webpage */
+    justify-content: space-evenly;
+    align-items: center;
+    /* enter needed declarations here */
+}
+
+section:nth-of-type(3) h3 {
+    /* This part of the code moves the "A Smaller Heading!" and the two orange circles near/apart from each other */
+    flex-grow: 1;
+    /* enter needed declarations here */
+
+}
+
+.orange-circle {
+    /* This part of the code is for the two orange circles */
+    background: orange;
+    width: 2em;
+    height: 2em;
+    border-radius: 1em;  /* if you remove this, the circles become squares*/
+    margin: .5em; /* if you remove this the two orange circles will be right next to each other */
+}
+
+.large-brown-box {
+    /* This part of the code is for the three brown rectangles but it doesn't cover the black outline */
+    height: 5em;
+    width: 5em;
+    background: brown;
+    flex-grow: 1; /* this part elongates the rectangles a little more */
+    /* enter needed declarations here */
+}
+
+.large-brown-box:nth-of-type(2) {
+    margin: 0 1em;  /* if you remove this code, the three brown rectangles join each other and look like a hershey's candy bar */
+}
+
+section:nth-of-type(5) {
+    /* This part of the code is for the spacing of the three yellow squares */
+    justify-content: space-evenly; /* this brought the three yellow squares closer to each other */
+    /* enter needed declarations here */
+}
+
+.yellow-box {
+    /* This part of the code is for the three yellow rectangles but it doesn't cover the black outline */
+    background: yellow;
+    width: 2em;
+    height: 2em;
+}
+
+section:nth-of-type(6) {
+    /* This part of the code is for the orange looking container with the grey rectangles on it */
+    background: coral;
+    height: 14em;
+    justify-content: space-between;
+    flex-wrap: wrap;  /* without this part of the code, the grey boxes are lined up in the center of the orange looking container on the x-axis */
+    /* enter needed declarations here */
+}
+
+.grey-box {
+    /* This part of the code is for the grey rectangles but it doesn't cover the black outline */
+    background: grey;
+    width: 3em;
+    height: 3em;
+}
+
+.grey-box:nth-of-type(odd) {
+    /* This part of the code is for the sizing of the grey rectangles. It's like every other grey rectangles is made longer going on the y-axis */
+    height: 4em;
+}
