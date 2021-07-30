@@ -1,3 +1,7 @@
+// Objects Introduction Exercise
+// Don't forget to open objects.html
+// Pushed final solution to GitHub on 7/30/21
+
 (function() {
     "use strict";
 
@@ -11,7 +15,7 @@
      */
 
     var person = {
-        firstName: "Amanda", //the reason why you weren't getting any output is because you forgot to add the comma; firstName is the property and "Amanda" is the value
+        firstName: "Amanda", //the reason why you weren't getting any output is because you forgot to add the comma after Amanda; firstName is the property and "Amanda" is the value
         lastName: "Fonseca"
     };
 
@@ -71,7 +75,7 @@
     //     console.log(output);
     // }
 
-    /** TODO:
+    /** TODO: DONE
      * Create an array of objects that represent books and store it in a variable named `books`. Each object should have a title and an author property. The author property should be an object with properties `firstName` and `lastName`. Be creative and add at least 5 books to the array.
      *
      * Example:
@@ -108,13 +112,13 @@
         } ,
     ];
 
-console.log(books[0].title);
-console.log(books[0].Author.firstName);
-console.log(books[0].Author.lastName);
+console.log(books[1].Title);
+console.log(books[1].Author.firstName);
+console.log(books[1].Author.lastName);
 
 
     /***
-     * TODO:
+     * TODO: DONE
      * Loop through the books array and output the following information about each book:
      * - the book number (use the index of the book in the array)
      * - the book title
@@ -129,13 +133,24 @@ console.log(books[0].Author.lastName);
      *      Book # 2
      *      Title: Walkaway
      *      Author: Cory Doctorow
-     *      ---
+     *      --- <-- you get this by putting console.log("---")
      *      Book # 3
      *      Title: A Brief History of Time
      *      Author: Stephen Hawking
      *      ---
      *      ...
      */
+    function bookLog(array) {
+        for (var x = 0; x < array.length; x++) {
+            var books = array[x];
+            console.log("Book #: " + (x + 1));
+            console.log("Title: " + books.Title);
+            console.log("Author: " + books.Author.firstName + " " + books.Author.lastName);
+            console.log("---");
+        }
+    }
+
+    console.log(bookLog(books));
 
 
 
@@ -143,13 +158,8 @@ console.log(books[0].Author.lastName);
 
     /**
      * Bonus:
-     * - Create a function named `createBook` that accepts a title and author
-     *   name and returns a book object with the properties described
-     *   previously. Refactor your code that creates the books array to instead
-     *   use your function.
-     * - Create a function named `showBookInfo` that accepts a book object and
-     *   outputs the information described above. Refactor your loop to use your
-     *   `showBookInfo` function.
+     * - Create a function named `createBook` that accepts a title and author name and returns a book object with the properties described previously. Refactor your code that creates the books array to instead use your function.
+     * - Create a function named `showBookInfo` that accepts a book object and outputs the information described above. Refactor your loop to use your `showBookInfo` function.
      */
 
 })();
