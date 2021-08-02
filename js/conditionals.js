@@ -24,25 +24,18 @@ console.log("working");
 // THIS IS A FUNCTION THAT IS USING CONDITIONAL LOGIC!!!
 // function declaration syntax
 function analyzeColor(input) {
-<<<<<<< HEAD
     if (input === "blue") {
         return "Blue is the color of the sky";
     } else if (input === "red") {
         return "Strawberries are red";
     } else if (input === "cyan") {
         return "I don\'t know anything about cyan";
-=======
-    if (input === "blue"){
-        return Blue is the color of the sky";
-    } else if (input === "red") {
-        return "Strawberries are red"
-    } else if (input === "cyan") {
-        return "I don\'t know anything about cyan"
->>>>>>> origin
     } else {
         return "Sorry, I don\'t know anything about " + input;
     }
 }
+
+
 // MAKE SURE THAT WHEN YOU CONSOLE.LOG THAT YOU ARE INDICATING WHAT YOU WANT IT TO CHECK FOR
 // IF YOU JUST CONSOLE.LOG(ANALYZECOLOR); IT WONT WORK RIGHT!!
 console.log(analyzeColor('blue'));
@@ -52,8 +45,7 @@ console.log(analyzeColor('cyan'));
 // Don't change the next two lines!
 // These lines create two variables for you:
 // - `colors`: a list of the colors of the rainbow
-// - `randomColor`: contains a single random color value from the list (this
-//                  will contain a different color every time the page loads)
+// - `randomColor`: contains a single random color value from the list (this will contain a different color every time the page loads)
 var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 var randomColor = colors[Math.floor(Math.random() * colors.length)];
 /**
@@ -66,17 +58,7 @@ console.log(analyzeColor(randomColor));
  * TODO: DONE
  * Refactor your above function to use a switch-case statement
  */
-function analyzeColor(input) {
-    if (input === "blue"){
-        return "blue is the color of the sky"
-    } else if (input === "red"){
-        return "Strawberries are red"
-    } else if (input === "cyan"){
-        return "I don't know anything about cyan"
-    } else {
-        return "Sorry, I don't know anything about that color!"
-    }
-}
+
 console.log(analyzeColor);
 var analyzeColor = prompt("What is your favorite color?");
 
@@ -139,11 +121,6 @@ function calculateTotal(luckyNumber, totalAmount) {
             break;
         case 4:
             discountNumber = .5;
-<<<<<<< HEAD
-            break;case 0:
-            discountNumber = 0;
-=======
->>>>>>> origin
             break;
         case 5:
             discountNumber = 1;
@@ -154,15 +131,14 @@ function calculateTotal(luckyNumber, totalAmount) {
     return totalAmount - (discountNumber * totalAmount);
 }
 
-<<<<<<< HEAD
-console.log(calculateTotal(0, 100), 100); //returns 100
-console.log(calculateTotal(4, 100), 50); //returns 50
-console.log(calculateTotal(5, 100), 0); //returns 0
-=======
-console.log(calculateTotal(0, 100), 100) //returns 100
-console.log(calculateTotal(4, 100), 50) //returns 50
-console.log(calculateTotal(5, 100), 0) //returns 0
->>>>>>> origin
+
+// console.log(calculateTotal(0, 100), 100); //returns 100
+// console.log(calculateTotal(4, 100), 50); //returns 50
+// console.log(calculateTotal(5, 100), 0); //returns 0
+// console.log(calculateTotal(0, 100), 100) //returns 100
+// console.log(calculateTotal(4, 100), 50) //returns 50
+// console.log(calculateTotal(5, 100), 0) //returns 0
+
 /**
  * TODO: DONE
  * Uncomment the line below to generate a random number between 0 and 6.
@@ -172,7 +148,6 @@ console.log(calculateTotal(5, 100), 0) //returns 0
  */
 // Generate a random number between 0 and 6
 var luckyNumber = Math.floor(Math.random() * 6);
-<<<<<<< HEAD
 
 function numberToCurrency(number) {
     return '$' + number.toFixed(2);
@@ -184,14 +159,12 @@ var message = 'Your lucky number is: ' + luckyNumber + '. '
     + 'Your price after the discount is: ' + numberToCurrency(calculateTotal(luckyNumber, totalBill)) + '. ';
 alert(message);
 
-=======
->>>>>>> origin
 
-var totalBill = parseFloat(prompt("What is the total bill in dollars?"));
-var message = 'Your lucky number is: ' + luckyNumber + '. '
-    + 'Your price before the discount is: $' + totalBill + '. '
-    + 'Your price after the discount is: $' + calculateTotal(luckyNumber, totalBill) + '.';
-alert(message);
+// var totalBill = parseFloat(prompt("What is the total bill in dollars?"));
+// var message = 'Your lucky number is: ' + luckyNumber + '. '
+//     + 'Your price before the discount is: $' + totalBill + '. '
+//     + 'Your price after the discount is: $' + calculateTotal(luckyNumber, totalBill) + '.';
+// alert(message);
 /**
  * TODO: DONE
  * Write some JavaScript that uses a `confirm` dialog to ask the user if they
