@@ -43,10 +43,10 @@ while (i < 10) {
 var i = 1;
 
  */
+var i = 1;
 
 while (i < 65536) {
-    i = i * 2
-    console.log(i);
+    console.log(i *= 2);
 }
 
 
@@ -86,7 +86,6 @@ while (iceCreamCones > 0) {
 }
 
 console.log("Yay! I sold them all and I can go home! :)");
-
 
 /*
 we have a certain amount of cones
