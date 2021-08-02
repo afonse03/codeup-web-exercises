@@ -1,6 +1,6 @@
 "use strict";
 //For Loops Exercise:
-/* #2: Create a function named showMultiplicationTable that accepts a number and console.logs the multiplication table for that number (just multiply by the numbers 1 through 10)
+/* DONE #2: Create a function named showMultiplicationTable that accepts a number and console.logs the multiplication table for that number (just multiply by the numbers 1 through 10)
 
 For example, showMultiplicationTable(7) should output
 
@@ -22,7 +22,6 @@ function showMultiplicationTable(number) {
         console.log(number + " x " + numberWeMultiplyBy + " = " + number * numberWeMultiplyBy);
 
     }
-
 }
 
 var number = 7;
@@ -47,9 +46,19 @@ console.log(number + " x 10 = " + number * 10);
 199 is odd
 ...
  */
-var i = 0;
-for (i=0; i<500; i++) {
-    console.log(Math.ceil((Math.random() * 180 ) + 20));
+// var i = 0;
+// for (var i = 0; i<500; i++) {
+//     console.log(Math.ceil((Math.random() * 180 ) + 20));
+// }
+
+for (var i = 0; i < 10; i++) {
+    var randomNumber = Math.floor(Math.random() * 180) + 20;
+
+    if (randomNumber % 2 === 0) {
+        console.log(randomNumber + " is even");
+    } else {
+        console.log(randomNumber + " is odd");
+    }
 }
 
 
@@ -65,7 +74,19 @@ for (i=0; i<500; i++) {
 88888888
 999999999
  */
+// for (var i = 1; i <= 9; i++) {
+//     console.log(i.toString().repeat(i));
+// }
 
+var string;
+for (var i = 1; i <=  10; i++){
+    i = i.toString();
+
+    string = i.substring(i.length - 1);
+
+
+    console.log(string.repeat(i));
+}
 
 
 
@@ -92,7 +113,9 @@ for (i=0; i<500; i++) {
 10
 5
  */
-
+for (var i = 100; i > 0; i -= 5) {
+    console.log(i);
+}
 
 
 
