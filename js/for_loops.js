@@ -79,7 +79,7 @@ for (var i = 0; i < 10; i++) {
 // }
 
 var string;
-for (var i = 1; i <=  10; i++){
+for (var i = 1; i <=  9; i++){
     i = i.toString();
 
     string = i.substring(i.length - 1);
