@@ -1,5 +1,6 @@
+// Pushed to GitHub on 8/2/2021
+// Don't forget to open split-join.html
 
-// PUSH THIS TO GITHUB WHEN SCHOOL IS OVER!!
 (function(){
     "use strict";
 
