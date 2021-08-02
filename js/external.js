@@ -1,3 +1,8 @@
+
+// JavaScript with HTML Exercise Part 1
+// Don't forget to open with external_js.html
+// Pushed to GitHub on 7/23/21 & final solutions on 7/30/21
+
 "use strict";
 //Make sure you don't put a space between log and the ( or else it won't work
 console.log("Hello from external JavaScript!");
