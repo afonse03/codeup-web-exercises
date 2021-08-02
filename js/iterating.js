@@ -1,3 +1,6 @@
+//Pushed to GitHub on 8/02/2021
+//Don't forget to open iterating_arrays_js.html
+
 (function(){
     "use strict";
 
