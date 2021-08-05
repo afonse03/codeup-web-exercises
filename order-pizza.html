@@ -67,13 +67,12 @@
 <!--nav tabs section-->
 <!--DONE-->
 <main class="container">
-  <div>
+  <div class="nav-tabs">
     <h2>Build your own pizza!</h2>
     <ul class="nav nav-tabs">
       <li class="nav-item">
         <a class="nav-link active" href="#size">
-          <span class="badge badge-pill badge-secondary mr-1">1</span>Size and crust</a>
-<!--        <span class="badge badge-pill badge-secondary">1</span><a class="nav-link active" href="#size">Size and crust</a>-->
+          <span class="badge badge-pill badge-secondary mr-1">1</span>Size and crust</a
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#cheese">
@@ -89,8 +88,82 @@
 
 <!--card section-->
 
+<!--size and crust-->
+<main class="container">
+  <div class="card">
+    <ul class="list-group">
+      <li class="header bg-primary text-white list-group-item active">Choose size and crust</li>
+  <div class="card">
+    <li class="header bg-light list-group-item">Hand Tossed</li>
+  </div>
+      <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
+      <li class="list-group-item"><input type="radio" name="crust" id="crust" value="1">Small (10")</li>
+      <li class="list-group-item"><input type="radio" name="crust" id="crust1" value="2">Medium (12")</li>
+    </ul>
+  </div>
+  <div class="card">
+    <ul class="list-group">
+      <div class="card">
+        <li class="header bg-light list-group-item">Crispy Thin</li>
+      </div>
+      <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
+      <li class="list-group-item"><input type="radio" name="crust" id="crust2" value="1">Medium (12")</li>
+      <li class="list-group-item"><input type="radio" name="crust" id="crust3" value="2">Large (14")</li>
+    </ul>
+  </div>
+  <div class="card-footer text-right p-2">
+    <a href="#cheese" class="btn btn-primary">Next Step <i class="fas fa-chevron-right"></i></a>
+  </div>
+</main>
 
-
+<!--cheese and sauce-->
+<main class="container">
+  <div class="card">
+    <ul class="list-group">
+      <li class="header bg-primary text-white list-group-item active">Choose Cheese and Sauce</li>
+      <div class="card">
+        <li class="header bg-light list-group-item">Cheese</li>
+      </div>
+      <li class="list-group-item">How much?</li>
+      <div class="form-group">
+        <select class="form-control" id="exampleFormControlSelect1">
+          <option>Light</option>
+          <option>Normal</option>
+          <option>Extra</option>
+          <option>Double</option>
+        </select>
+      </div>
+    </ul>
+  </div>
+  <div class="card">
+    <ul class="list-group">
+      <div class="card">
+        <li class="header bg-light list-group-item">Sauce</li>
+      </div>
+      <li class="list-group-item">What type?</li>
+      <div class="form-group">
+        <select class="form-control" id="exampleFormControlSelect2">
+          <option>Tomato sauce</option>
+          <option>Marinara sauce</option>
+          <option>BBQ Sauce</option>
+          <option>Alfredo Sauce</option>
+        </select>
+      </div>
+      <li class="list-group-item">How Much?</li>
+      <div class="form-group">
+        <select class="form-control" id="exampleFormControlSelect3">
+          <option>Light</option>
+          <option>Normal</option>
+          <option>Extra</option>
+        </select>
+      </div>
+    </ul>
+  </div>
+  <div class="btn-group card-footer" role="group" aria-label="toppings">
+    <button type="button" class="btn btn-primary fas-fa-chevron-left">Previous Step </button>
+    <button type="button" class="btn btn-primary">Next Step <i class="fas fa-chevron-right"></i></button>
+  </div>
+</main>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
