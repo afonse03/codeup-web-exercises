@@ -1,10 +1,25 @@
+<!--it's not working for me. Why???-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>DOM Warmups</title>
 </head>
 <body>
-$END$
+<h1 id="goodMorning">Good Morning, Draco!</h1>
+<button id="afternoon">It's afternoon</button>
+<script src="js/DOM-warmups.js">
+
+  var afternoonButton = document.getElementById("afternoon"); //this is called referencing
+  var header = document.getElementById("goodMorning");
+  var changeHeader = function() {
+    header.innerHTML = "Good Afternoon, Draco!"
+  }
+  afternoonButton.addEventListener('click', function(changeHeader);
+
+</script>
+
 </body>
 </html>
+<!--good afternoon draco-->

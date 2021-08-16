@@ -7,15 +7,38 @@
     <meta charset="UTF-8">
     <title>Attributes and CSS Exercise</title>
     <script src="js/jquery-3.6.0.min.js"></script>
+<!--style is inline css-->
     <style>
         .invisible {
             visibility: hidden;
         }
+
+        img {
+            float: right;
+        }
+
+        body {
+            background-color: cornsilk;
+        }
+
+        dl {
+            font-size: large;
+        }
+
+        dd {
+            color: red;
+            font-size: large;
+        }
+
+
+
     </style>
 </head>
 <body>
+<img src="img/nationalparks2.jpeg">
 <h1 id="main-header">National Parks FAQ</h1>
     <p>
+<!--https://www.nps.gov/aboutus/faqs.htm-->
         <dl>1. Who is the director of the National Park Service?</dl>
             <dd class="invisible">Shawn Benge is the Director of the National Park Service.</dd>
         <dl>2. What government agency oversees the National Park Service?</dl>
@@ -37,7 +60,15 @@
             <dd class="invisible">Blue Ridge Parkway was the most-visited national park in 2020.</dd>
         <dl>10. Can I bring my pet to a national park?</dl>
             <dd class="invisible">Some national parks welcome pets--in developed areas, on many trails and campgrounds, and in some lodging facilities.</dd>
-</p>
 
+<a href="#" id="info">Click here to reveal answers to questions.</a>
+</p>
+<script>
+    "use strict";
+
+    $("#info").on("click", function(e) {
+        $("dd").toggleClass("invisible");
+    });
+</script>
 </body>
 </html>

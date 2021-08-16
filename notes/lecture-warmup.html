@@ -9,7 +9,7 @@
 <script>
   "use strict";
 
-  /*
+  /* This warmup is from the beginning of class on August 4, 2021
 
    TODO 1: Create a function, allAs, that takes in an array of letters and returns true
      if all letters in the passed array are the letter 'A' or 'a' and false otherwise.
@@ -23,12 +23,38 @@
      allAs([]) // false
 
    */
-function allAs(array) {
-  if (allAs.isArray === "A" || allAs.isArray === "a") {
-    return true;
+  // function allAs(array) {
+  //   for (var i = 0; i < array.length; i++) {
+  //     if (array[i] === 'a' || array[i] === 'A') {
+  //       continue;
+  //     } else {
+  //       return false;
+  //     }
+  //   } return true;
+  // }
+  //
+  // console.log(allAs([]));
+
+  function allAs(array) {
+    if (array.length === 0) { //this is how you check to see if an array is empty
+      return false;
+    }
+    // look at each element in the array and if a non-'a' is found, return false (this is how you set that up)
+    for (var i = 0; i < array.length; i++) {
+      // if (array[i] !== 'a' && array[i] !== 'A') { *the refactored solution for this part is below:
+        if (array[i] !== 2) {
+        return false;
+      }
+    }
+    return true; // if the function doesn't know what to do if its true it will return undefined because we haven't told it to return true if it meets the parameters. It can't return true if there's nothing in the function that says to return true, so putting this is important to pass all the test cases.
   }
-  return false;
-}
+
+  // all of these console.logs checks out correctly
+  console.log(allAs(['b', 'a', 'A', 'c'])); // false
+  console.log(allAs(['c', 'a', 'b', 'A'])); // false
+  console.log(allAs([])); // false
+  console.log(allAs(['a', 'A', 'a', 'a'])); // true
+
   /*
 
    TODO: 2. Create a function, all2s, that takes in an array of numbers and returns true
@@ -43,17 +69,30 @@ function allAs(array) {
      all2s([]) // false
 
    */
+  function all2s(array) {
+    if (array.length === 0) {
+      return false;
+    }
+    for (var i = 0; i < array.length; i++) {
+      if (array[i] !== 2) {
+        return false;
+      }
+    }
+    return true;
+  }
 
+  console.log(all2s([2, 4, 1, 9])); // false
+  console.log(all2s([2, 2, 2, 2, 2])); // true
+  console.log(all2s([2])); // true
+  console.log(all2s([])); // false
 
   /*
-
    TODO: 3. Create a function, objectHasAllAsAnd2s, that takes in an object with properties
     for 'letters' and 'numbers' that are arrays. The function will return true if
     all elements in the 'letters' array are 'A's or 'a's and all elements in the
     'numbers' array are 2s. Assume that the 'letters' array will only contain valid letters
     and the 'numbers' array will only contain valid numbers. If one or both arrays are empty,
     the function should return false.
-
     Examples
 
     objectHasAllAsAnd2s({
@@ -76,8 +115,32 @@ function allAs(array) {
       numbers: [2]
     }); // returns true;
 
+    CONTINUE WORKING ON THIS PROBLEM!!! YOU LEFT OFF ON THE CONSOLE.LOG
+   */
+function objectHasAllAsAnd2s(object) {
+  return allAs(object.letters) && all2s(object.numbers);
+}
 
-  */
+  console.log(objectHasAllAsAnd2s)({
+    letters: ['a', 'A', 'a', 'A'],
+    numbers: [2, 2, 2, 2, 2, 2]
+  }); // returns true;
+
+  console.log(objectHasAllAsAnd2s)({
+    letters: ['a', 'A', 'b, 'A'],
+      numbers: [2, 2, 2, 2, 2, 2]
+  }); // returns false;
+
+  console.log(objectHasAllAsAnd2s)({
+    letters: ['a', 'A', 'a', 'A'],
+    numbers: []
+  }); // returns false;
+
+  console.log(objectHasAllAsAnd2s)({
+    letters: ['a'],
+    numbers: [2]
+  }); // returns true;
+
 
 </script>
 </body>

@@ -1,10 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>jQuery Methods</title>
+    <style>
+        .highlight {
+            color: lightcoral;
+        }
+    </style>
 </head>
 <body>
-$END$
+<h1>Essential jQuery Methods</h1>
+<h2 id="leader">I am the leader</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet, architecto aut blanditiis dolorum eaque eos
+    esse expedita facere, fugiat illum ipsam magnam nulla optio placeat totam ullam veniam, veritatis?</p>
+<h2 id="follower">I am the follower</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci asperiores consequatur delectus fugiat iste magni
+    odio optio pariatur vero! Corporis debitis distinctio error, esse et facere fugiat provident quasi voluptatem.</p>
+<button id="font-changer">Change the font</button>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+    //don't forget the () after the method; otherwise the method doesn't work and you just get the method itself
+    //don't do this:
+    /*var htmlMethod = $("#leader").html;
+    alert(htmlMethod);
+     */
+    // alert(followerContent);
+
+
+    //You can get content from the page as follows:
+    var followerContent = $("#follower").html();
+    if (followerContent === "I am the follwer") {
+        $("#leader").html("And don't you forget it!");
+    }
+
+    $("#font-changer").click(function() {
+       var currentFontFamily = $("body").css("font-family");
+       // alert(currentFontFamily);
+       if (currentFontFamily === "serif" || currentFontFamily === "Times") {
+           $("body").css("font-family", "sans-serif");
+        } else {
+           $("body").css("font-family", "serif");
+        }
+    });
+
+    // $("h2").mouseenter(function(){
+    //    $(this).addClass("highlight");
+    // });
+    // $("h2").mouseleave(function() {
+    //    $(this).removeClass("highlight");
+    // });
+
+    //this is like a refactor of coding from the two previous codes to hover and change color of headings
+    // $("h2").hover(function() {
+    //    $(this).toggleClass("highlight");
+    // });
+
+    $("h2").hover(function(event) {
+       $(event.target).toggleClass("highlight");
+    });
+
+
+
+</script>
 </body>
 </html>
