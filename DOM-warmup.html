@@ -5,18 +5,52 @@
 <head>
     <meta charset="UTF-8">
     <title>DOM Warmups</title>
+<!--    <style>-->
+<!--        #button1:hover {-->
+<!--            background-color: hotpink;-->
+<!--        }-->
+
+<!--        #button2:hover {-->
+<!--            background-color: hotpink;-->
+<!--        }-->
+
+<!--        #button3:hover {-->
+<!--            background-color: hotpink;-->
+<!--        }-->
+<!--    </style>-->
 </head>
 <body>
 <h1 id="goodMorning">Good Morning, Draco!</h1>
 <button id="afternoon">It's afternoon</button>
+<section>
+    <button id="button1" data-number="1">Change Me</button>
+    <button id="button2" data-number="2">Change Me Too</button>
+    <button id="button3" data-number="3">Don't forget about me</button>
+    <p id="message"></p>
+</section>
+<button id="reset">Reset</button>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossOrigin="anonymous"></script>
 <script src="js/DOM-warmups.js">
+
 
   var afternoonButton = document.getElementById("afternoon"); //this is called referencing
   var header = document.getElementById("goodMorning");
   var changeHeader = function() {
     header.innerHTML = "Good Afternoon, Draco!"
   }
-  afternoonButton.addEventListener('click', function(changeHeader);
+  afternoonButton.addEventListener('click', changeHeader => {
+  };
+
+  //Javier's solution for warmup on 8/17/2021
+
+  // $("section button").hover(
+  //     function(e) {
+  //         $(e.target).css("background-color", "hotpink");
+  //     },
+  //     function(e) {
+  //         $(e.target).css("background-color", "white");
+  // });
 
 </script>
 
