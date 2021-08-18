@@ -29,11 +29,21 @@
     <p id="message"></p>
 </section>
 <button id="reset">Reset</button>
+<section>
+    <input type="text" id="wordToDisplay">
+    <button id="displayWord">Display in DOM</button>
+    <p id="word"></p>
+</section>
+<section>
+    <button id="create-an-element">Create an Element</button>
+</section>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossOrigin="anonymous"></script>
 <script src="js/DOM-warmups.js">
 
 
+
+<!--What is this solution for? I think this is for the warmup on Monday when we needed to change the header to say Good Afternoon, Draco!-->
   var afternoonButton = document.getElementById("afternoon"); //this is called referencing
   var header = document.getElementById("goodMorning");
   var changeHeader = function() {
@@ -42,15 +52,27 @@
   afternoonButton.addEventListener('click', changeHeader => {
   };
 
-  //Javier's solution for warmup on 8/17/2021
+  //Javier's solution for warmup on 8/17/2021. It's not working for me!!
 
-  // $("section button").hover(
-  //     function(e) {
-  //         $(e.target).css("background-color", "hotpink");
-  //     },
-  //     function(e) {
-  //         $(e.target).css("background-color", "white");
-  // });
+  $("section button").hover(
+      function(e) {
+          $(e.target).css("background-color", "hotpink");
+      },
+      function(e) {
+          $(e.target).css("background-color", "white");
+  });
+
+    //Solution for warmup on 8/18/2021
+    // alert($("#wordToDisplay").val());
+
+    $("#displayWord").on("click", function() {
+        var word = $("wordToDisplay").val();
+       $("word").html(word);
+    });
+
+    $("create-an-element").on('click', function() {
+       $(this).after('<p>I am new</p>');
+    });
 
 </script>
 
