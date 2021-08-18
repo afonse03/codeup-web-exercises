@@ -34,12 +34,18 @@
             font-size: large;
         }
 
+        /*.last {*/
+        /*    background-color: yellow;*/
+        /*}*/
+
 
 
     </style>
 </head>
 <body>
 <img src="img/nationalparks2.jpeg">
+
+<div class="row container">
 <h1 id="main-header">National Parks FAQ</h1>
     <p>
 <!--https://www.nps.gov/aboutus/faqs.htm-->
@@ -66,13 +72,58 @@
             <dd class="invisible">Some national parks welcome pets--in developed areas, on many trails and campgrounds, and in some lodging facilities.</dd>
 
 <a href="#" id="info">Click here to reveal answers to questions.</a>
-</p>
+<br>
+</div>
+<br>
+<div class="row container-fluid">
+    <div class="card col-4">
+        <h3>Yellowstone National Park</h3>
+        <ul>
+            <li>Fact</li>
+            <li>Fact</li>
+            <li>Fact</li>
+            <li class="last highlight">Fact</li>
+        </ul>
+    </div>
+    <div class="card col-4">
+        <h3>Zion National Park</h3>
+        <ul>
+            <li>Fact</li>
+            <li>Fact</li>
+            <li>Fact</li>
+            <li>Fact</li>
+        </ul>
+    </div>
+    <div class="card col-4">
+        <h3>Crater Lake National Park</h3>
+        <ul>
+            <li>Fact</li>
+            <li>Fact</li>
+            <li>Fact</li>
+            <li>Fact</li>
+        </ul>
+    </div>
+</div>
+<br>
+<div class="col-12">
+    <form>
+        <label for="button">
+            <button type="button" id="button">Click to highlight</button>
+        </label>
+    </form>
+</div>
+
 <script>
     "use strict";
 
     $("#info").on("click", function(e) {
         $("dd").toggleClass("invisible");
     });
+
+    $("#button").on("click", function(e) {
+       $("last").toggleClass("highlight");
+    });
+
 </script>
 </body>
 </html>
