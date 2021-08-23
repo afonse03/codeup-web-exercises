@@ -8,6 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!--    <script src="https://kit.fontawesome.com/9985009ad2.js" crossorigin="anonymous"></script>-->
 
     <title>Weather Map Project</title>
     <!--Bootstrap CSS-->
@@ -17,98 +18,93 @@
     <!--My external css stylesheet-->
     <link rel="stylesheet" href="css/weather_map.css">
 
+
 </head>
 <body>
-
 <!--top section in blue including search feature-->
+<!--<i class="fa-solid fa-cloud-rainbow"></i>-->
+<h1 id="main-header" class="bg-primary">Weather App</h1>
+<div class="searchRow">
+    <form id="form1">
+        <input type="text" id="search">
+        <button class="btn btn-primary" type="submit" id="submit">Find</button>
+    </form>
+</div>
+<div class="page-wrapper container-fluid">
+
+<!--5 day forecast section-->
 <section>
-    <div class="container">
-        <div class="header-section">
-            <h1 id="main-header" class="bg-primary">Weather App</h1>
-            <h3>Current city:</h3>
+        <div id="current-weather-container" class="container col-sm">
+            <div class="card text-center">
+                <div class="card-header row">
+                    Date/Time
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Today's Weather</h5>
+                    <p class="card-text">High/Low</p>
+                    <p class="card-text">Humidity</p>
+                    <p class="card-text">Wind Speed</p>
+                    <p class="card-text">Sunrise/Sunset</p>
+                </div>
+            </div>
+        </div>
+    <div id="daily-weather-container" class="container col-sm">
+        <div class="card text-center">
+            <div class="card-header row">
+                Date/Time
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Weekly Forecast</h5>
+                <p class="card-text">High/Low</p>
+            </div>
+        </div>
+    </div>
+<section>
+    <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
     </div>
 </section>
-<section>
-    <div class="container2">
-        <form class="form-inline">
-            <div class="form-group mb-2">
-                <label for="locationSearch" class="sr-only">Place</label>
-                <input type="text" readonly class="form-control-plaintext" id="locationSearch" value="Place">
-            </div>
-            <div class="form-group mx-sm-3 mb-2">
-                <label for="inputLocation" class="sr-only">Password</label>
-                <input type="text" class="form-control" id="inputLocation">
-            </div>
-            <button type="find" class="btn btn-primary mb-2">Find</button>
-        </form>
-    </div>
 </section>
-
-<!--5 day forecast section-->
-
-
-
-
+</div>
 
 <!--Map section-->
-
-
-
-
-
-
-
-
-
-
-
-
-<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-<script src="js/keys.js"></script>
+<div id='map' style='width: 400px; height: 300px;'></div>
 <script>
-    "use strict";
-
-    //convert API date/time response to JS Date Object:
-    // ... new Date(291586749 * 1000)
-
-    $.get('https://api.openweathermap.org/data/2.5/onecall', {
-       appid: WEATHER_APP_ID,
-       lat: 31.7619,
-       lon: -106.4850,
-        units: 'imperial',
-        exclude: 'minutely,hourly' //remember to not include spaces when excluding something
-    }).done(function(data) {
-        console.log(data);
-
-        //this is how you find the humidity for day 1 (which is at index[0])
-        console.log(data.daily[0].humidity);
-
-        //this is how you find the daily humidity using a forEach
-        data.daily.forEach(function(day) {
-           console.log(day.humidity);
-        });
-
-        //this is how you find just the cloud coverage
-        console.log(data.current.clouds);
-
-        console.log('5 day forecast', data);
-
-        //if something fails, we should push out an error message using this code
-    }).fail(function(error) {
-       console.log(error);
-    });
-
-
-
-
-
-
+    // mapboxgl.accessToken = MAPBOX_API_TOKEN;
+    // const map = new mapboxgl.Map({
+    //     container: 'map', // container ID
+    //     style: 'mapbox://styles/mapbox/streets-v11', // style URL
+    //     center: [-106.4850, 31.7619], // starting position [lng, lat]
+    //     zoom: 9 // starting zoom
+    // });
 </script>
 
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--jQuery library-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<!--bootstrap js link-->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="js/keys.js"></script>
+<script src="js/weather_main.js"></script>
 </body>
 </html>
