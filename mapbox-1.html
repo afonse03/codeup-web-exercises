@@ -1,10 +1,99 @@
+<!--Mini Exercises on 8/19/2021-->
+<!--Mapbox API Lecture-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>First Mapbox Mini Exercise</title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet'>
+    <style>
+        #map {
+            width: 800px;
+            height: 800px;
+        }
+    </style>
 </head>
 <body>
-$END$
+
+    <div id="map"></div>
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script>
+    <script src="js/keys.js"></script>
+    <script>
+        "use strict";
+
+        mapboxgl.accessToken = MAPBOX_API_TOKEN;
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [-106.4850, 31.7619], //El Paso coordinates
+            zoom: 12
+        });
+
+        // the code below did not work:
+        // var mapZoomOut = new map.ZoomOut({
+        //    offset: [-95.7129, 37.0902],
+        //     timeInterval: 5000
+        // });
+
+        setTimeout(function() {
+            // Zoom to the zoom level 5 without an animated transition; closed () is without animation.
+            // map.zoomTo(5);
+            // Zoom to the zoom level 8 with an animated transition; open () makes it animated.
+            map.zoomTo(2, {
+                duration: 5000,
+                offset: [-95.7129, 37.0902],
+                setStyle:
+            });
+        });
+
+    </script>
+
+
 </body>
 </html>
+
+<!--FIRST MINI EXERCISE SOLUTION-->
+<!--Instructions:-->
+<!--Create an HTML called mapbox-1.html and create a mapbox map that shows your home town. After 5 seconds, have the map automatically change to a map of the entire United States using a satellite style.-->
+<!--Justin's solution:-->
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>First Exercise Map</title>-->
+<!--    <link href='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet' />-->
+<!--    <style>-->
+<!--        #map {-->
+<!--            width: 800px;-->
+<!--            height: 800px;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<div id="map"></div>-->
+
+<!--<script src='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script>-->
+<!--<script src="js/keys.js"></script>-->
+<!--<script>-->
+<!--    "use strict";-->
+
+<!--    mapboxgl.accessToken = MAPBOX_API_TOKEN;-->
+<!--    var map = new mapboxgl.Map({-->
+<!--        container: 'map', // container ID-->
+<!--        style: 'mapbox://styles/mapbox/streets-v11', // style URL-->
+<!--        center: [-98.9431, 29.6047], // starting position [lng, lat]-->
+<!--        zoom: 12 // starting zoom-->
+<!--    });-->
+<!--    setTimeout(function() {-->
+<!--        map.setZoom(3);-->
+<!--        map.setStyle('mapbox://styles/mapbox/satellite-v9');-->
+<!--        map.setCenter([-100.9431, 20.6047]);-->
+<!--    }, 5000);-->
+
+<!--</script>-->
+
+<!--</body>-->
+<!--</html>-->

@@ -8,27 +8,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<!--    <script src="https://kit.fontawesome.com/9985009ad2.js" crossorigin="anonymous"></script>-->
-
     <title>Weather Map Project</title>
     <!--Bootstrap CSS-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!--Mapbox CSS?-->
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet'>
-    <style>
-        #map {
-            width: 100%;
-            height: 800px;
-        }
-    </style>
     <!--My external css stylesheet-->
     <link rel="stylesheet" href="css/weather_map.css">
-
-
 </head>
 <body>
 <!--top section in blue including search feature-->
-<!--<i class="fa-solid fa-cloud-rainbow"></i>-->
 <h1 id="main-header" class="bg-primary">Weather App</h1>
 <div class="searchRow">
     <form id="form1">
@@ -38,8 +27,9 @@
 </div>
 <div class="page-wrapper container-fluid">
 
-<!--5 day forecast section-->
+
 <section>
+    <!--daily weather section-->
         <div id="current-weather-container" class="container col-sm">
             <div class="card text-center">
                 <div class="card-header row">
@@ -54,10 +44,73 @@
                 </div>
             </div>
         </div>
+    <!--5 day forecast section-->
+<!--    <div id="daily-weather-container2" class="flex-container">-->
+<!--        <div class="card" style="width: 18rem;">-->
+<!--            <div class="card-header">Date</div>-->
+<!--            <ul class="list-group list-group-flush">-->
+<!--                <li class="list-group-item">High/Low</li>-->
+<!--                <li class="list-group-item">Description</li>-->
+<!--                <li class="list-group-item">Humidity</li>-->
+<!--                <li class="list-group-item">Wind</li>-->
+<!--                <li class="list-group-item">Pressure</li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div id="daily-weather-container3" class="flex-container">-->
+<!--        <div class="card" style="width: 18rem;">-->
+<!--            <div class="card-header">Date</div>-->
+<!--            <ul class="list-group list-group-flush">-->
+<!--                <li class="list-group-item">High/Low</li>-->
+<!--                <li class="list-group-item">Description</li>-->
+<!--                <li class="list-group-item">Humidity</li>-->
+<!--                <li class="list-group-item">Wind</li>-->
+<!--                <li class="list-group-item">Pressure</li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div id="daily-weather-container4" class="flex-container">-->
+<!--    <div class="card" style="width: 18rem;">-->
+<!--            <div class="card-header">Date</div>-->
+<!--            <ul class="list-group list-group-flush">-->
+<!--                <li class="list-group-item">High/Low</li>-->
+<!--                <li class="list-group-item">Description</li>-->
+<!--                <li class="list-group-item">Humidity</li>-->
+<!--                <li class="list-group-item">Wind</li>-->
+<!--                <li class="list-group-item">Pressure</li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div id="daily-weather-container5" class="flex-container">-->
+<!--    <div class="card" style="width: 18rem;">-->
+<!--            <div class="card-header">Date</div>-->
+<!--            <ul class="list-group list-group-flush">-->
+<!--                <li class="list-group-item">High/Low</li>-->
+<!--                <li class="list-group-item">Description</li>-->
+<!--                <li class="list-group-item">Humidity</li>-->
+<!--                <li class="list-group-item">Wind</li>-->
+<!--                <li class="list-group-item">Pressure</li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div id="daily-weather-container6" class="flex-container">-->
+<!--    <div class="card" style="width: 18rem;">-->
+<!--            <div class="card-header">Date</div>-->
+<!--            <ul class="list-group list-group-flush">-->
+<!--                <li class="list-group-item">High/Low</li>-->
+<!--                <li class="list-group-item">Description</li>-->
+<!--                <li class="list-group-item">Humidity</li>-->
+<!--                <li class="list-group-item">Wind</li>-->
+<!--                <li class="list-group-item">Pressure</li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </div>-->
+
+    <!--This is a functional daily weather section-->
     <div id="daily-weather-container" class="container col-sm">
         <div class="card text-center">
             <div class="card-header row">
-                Date/Time
+                Date
             </div>
             <div class="card-body">
                 <h5 class="card-title">Weekly Forecast</h5>
@@ -83,22 +136,6 @@
 </section>
 </section>
 </div>
-
-<!--Map section-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <!--jQuery library-->

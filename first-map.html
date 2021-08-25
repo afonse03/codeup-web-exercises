@@ -1,10 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>First Map</title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet' /> <!--this is needed to display the map; usually located in the head-->
+    <style>
+        #map {
+            width: 800px;
+            height: 800px;
+        }
+    </style>
 </head>
 <body>
-$END$
+
+    <div id="map"></div> <!--this is our map container-->
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script> <!--mapbox script;this is brining in the library of mapbox; we use this so we don't need to download mapbox locally; usually located at the end of the body-->
+    <script src="js/keys.js"></script>
+    <script> //custom javascript that I will create to display the map
+
+        "use strict";
+
+        mapboxgl.accessToken = MAPBOX_API_TOKEN; //this is here to define our token; unique token associated with my mapbox account and identifies who I am so mapbox can see that this is legit; secure your own token; mapboxgl is a variable that we refer to in that global mapbox object. from this global mapbox object, we can create additional objects that are required to make the map
+        var map = new mapboxgl.Map({ //the map variable is going to hold a special object that was created using a constructor (we will cover this more in the java section). The .Map is the object that we are making with the code below.
+            container: 'map', // container ID in the <div> on line 16. Whatever you name the div id, needs to be changed here too
+            style: 'mapbox://styles/mapbox/streets-v11', // style URL; if you want to see a satellite view, you just need to point it to the appropriate style for that street view
+            center: [-74.5, 40], // starting position [lng, lat]; this tells the map where to initially start out
+            zoom: 9  // starting zoom
+        });
+
+        map.setZoom(10);
+
+
+
+    </script>
+
+
+
 </body>
 </html>

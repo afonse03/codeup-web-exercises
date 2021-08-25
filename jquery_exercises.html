@@ -2,17 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Introduction to jQuery</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
 </head>
 <body>
 <nav>
     <div class="container">
         <button class="menu-button">Menu</button>
         <button class="login-button">Login</button>
+        <button class="my-button">My Button</button>
     </div>
 </nav>
 <div class="nav-menu hide">
@@ -31,16 +36,26 @@
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad alias animi deserunt dicta dolore dolores esse explicabo iusto, laboriosam magnam neque porro provident quo quos, ratione rem sequi voluptate!
 </p>
 
-
-
-
-
-
-
-
-
 <!--the jquery script below is the CDN (content delivery network)-->
-<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+    // answer for the jQuery introduction exercise:
+    // for some reason, if I don't have my
+    "use strict";
+    $(document).ready(function() {
+
+    alert("DOM has finished loading");
+
+    });
+</script>
+
+
+
+
+
+
+
+
 <script src="js/jquery-exercises.js"></script>
 </body>
 </html>

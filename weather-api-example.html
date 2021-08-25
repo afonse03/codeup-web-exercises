@@ -2,9 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Weather API Examples</title>
 </head>
 <body>
-$END$
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="js/keys.js"></script>
+<script>
+  "use strict";
+
+  // convert API date/time response to JS Date Object
+  // ... new Date(1629461117 * 1000)
+
+  $.get('https://api.openweathermap.org/data/2.5/onecall', {
+    appid: WEATHER_APP_ID,
+    lat: 29.4252,
+    lon: -98.4916,
+    units: 'imperial',
+    exclude: 'minutely,hourly'
+  }).done(function(data) {
+    console.log(data);
+    console.log(data.daily[0].humidity);
+
+    data.daily.forEach(function(day) {
+      console.log(day.humidity);
+    });
+
+  }).fail(function(error) {
+    console.log(error);
+  });
+
+  // $.get('https://api.openweathermap.org/data/2.5/onecall', {
+  //   appid: WEATHER_APP_ID,
+  //   lat: 31.7619,
+  //   lon: -106.4850,
+  //   units: 'imperial',
+  //   exclude: 'minutely,hourly' //remember to not include spaces when excluding something
+  // }).done(function(data) {
+  //   console.log(data);
+  //
+  //   //this is how you find the humidity for day 1 (which is at index[0])
+  //   console.log(data.daily[0].humidity);
+  //
+  //   //this is how you find the daily humidity using a forEach
+  //   data.daily.forEach(function(day) {
+  //     console.log(day.humidity);
+  //   });
+  //
+  //   //this is how you find just the cloud coverage
+  //   console.log(data.current.clouds);
+  //
+  //   console.log('5 day forecast', data);
+  //
+  //   //if something fails, we should push out an error message using this code
+  // }).fail(function(error) {
+  //   console.log(error);
+  // });
+
+</script>
+
 </body>
 </html>

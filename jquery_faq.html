@@ -6,7 +6,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Attributes and CSS Exercise</title>
-    <script src="js/jquery-3.6.0.min.js"></script>
 <!--style is inline css-->
     <style>
 
@@ -37,13 +36,11 @@
         /*.last {*/
         /*    background-color: yellow;*/
         /*}*/
-
-
-
     </style>
 </head>
 <body>
-<img src="img/nationalparks2.jpeg">
+<button class="img-button">Click Image</button>
+<img class="slide-img" src="img/nationalparks2.jpeg">
 
 <div class="row container">
 <h1 id="main-header">National Parks FAQ</h1>
@@ -112,7 +109,8 @@
         </label>
     </form>
 </div>
-
+<!--jQuery script always goes on top of my JS-->
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script>
     "use strict";
 
@@ -122,6 +120,10 @@
 
     $("#button").on("click", function(e) {
        $("last").toggleClass("highlight");
+    });
+
+    $(".img-button").on("click", function() {
+       $(".slide-img").slideToggle();
     });
 
 </script>

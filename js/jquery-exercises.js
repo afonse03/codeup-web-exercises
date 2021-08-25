@@ -4,16 +4,34 @@ $(document).ready(function() {
 
     $(".menu-button").on("click", function() {
         // alert("Hello");
-        $("li").toggleClass();
-
-
+        $("li").slideToggle(500);
     });
+    //.on is the event listener. "click" is the event handler.
     $(".login-button").on("click", function() {
        // alert("hi");
         $("h1").css("color", "pink");
     });
+//mouseenter usually takes an event. .on and .hover is a method.
+    $("p").hover(function(event) {
+        // alert("testing");
+        $(event.target).css("color", "pink");
+    }, //this is how you chain methods
+    function(event) {
+        $(event.target).css("color", "black")
+    });
+    $(".my-button").on("click", function() {
+        $("h1").toggleClass("highlight");
+        $("p").toggleClass("highlight");
+        $("li").toggleClass("highlight");
+    });
+    $("button").hover(function() {
+        $(this).css("color", "pink")
+    },
+        function() {
+        $(this).css("color","grey")
+        }
+    )
 
-    $("#main-header")
 });
 
 /*
@@ -55,7 +73,7 @@ Remove your custom jQuery code from previous exercises.
 
 Using jQuery, set the font-size of all li elements to 20px.
 
-Craft selectors that highlight all the h1, p, and li elements.
+Craft selectors that highlight all the h1, p, and li elements. DONE
 
 Create a jQuery statement to alert the contents of your h1 element(s).
 */

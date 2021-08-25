@@ -3,6 +3,7 @@ $(document).ready(function() {
 
 let startingCoordinates = [-106.4850, 31.7619]
 
+    //displays the map
     mapboxgl.accessToken = MAPBOX_API_TOKEN;
     var map = new mapboxgl.Map({
         container: 'map', // container ID
@@ -25,13 +26,6 @@ let startingCoordinates = [-106.4850, 31.7619]
 
 
 
-// mapboxgl.accessToken = MAPBOX_API_TOKEN;
-// const map = new mapboxgl.Map({
-//     container: 'map', // container ID
-//     style: 'mapbox://styles/mapbox/streets-v11', // style URL
-//     center: [-106.4850, 31.7619], // starting position [lng, lat]
-//     zoom: 9 // starting zoom
-// });
 
 //ajax
 function getWeather(coordinatesArray) {
@@ -56,6 +50,7 @@ function getWeather(coordinatesArray) {
 //initial weather call
 getWeather(startingCoordinates);
 
+
 //for the find button
 $("#submit").on("click", function(e) {
     e.preventDefault();
@@ -68,7 +63,7 @@ $("#submit").on("click", function(e) {
 });
 
 
-
+//for current weather
 function renderWeatherCurrent(data) {
     return `
         <div class="card text-center">
@@ -81,11 +76,13 @@ function renderWeatherCurrent(data) {
                 <p class="card-text">Humidity: ${data.current.humidity}</p>
                 <p class="card-text">Wind speed: ${data.current.wind_speed}</p>
                 <p class="card-text">Sunrise: ${timeConverter(data.current.sunrise)} / Sunset: ${timeConverter(data.current.sunset)}</p>
+                <p class="card-text">Description: ${data.current.weather[0].description}</p>
             </div>
         </div>
     `
 }
 
+//for weekly (or daily) weather
 function renderWeatherWeekly(data) {
     return `
         <div class="card text-center">
@@ -103,12 +100,12 @@ function renderWeatherWeekly(data) {
 function weeklyForecast(data) {
     let html = '';
     for (var i = 0; i < data.daily.length; i++) {
-        html += `<p class="card-text">High/Low: ${data.daily[i].temp.max} / ${data.daily[i].temp.min}</p>
-`
+        html += `<p class="card-text">High/Low: ${data.daily[i].temp.max} / ${data.daily[i].temp.min}</p>`
     }
     return html;
 }
 
+//shows the date
 function timeConverter(unix_timestamp) {
 // Create a new JavaScript Date object based on the timestamp
 // multiplied by 1000 so that the argument is in milliseconds, not seconds.
@@ -135,28 +132,6 @@ function dateConverter(unix){
     let day = d.getDate();
     return `${m} ${day}, ${year}`;
 }
-
-//for the cards that display weather information
-// function displayDate(data) {
-//     let date = new Date(data.current.dt * 1000)
-//     console.log(date);
-// }
-
-// function handleAllData(dataObj) {
-//     console.log(new Date((object.current.dt * 1000)));
-//     console.log(data.daily[0].)
-// }
-
-
-
-
-
-
-
-
-
-
-
 
 
 //we need these functions in order for everything to work
