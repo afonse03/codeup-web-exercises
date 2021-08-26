@@ -47,39 +47,61 @@ const email = '';
 const languages = [];
 
 // DONE TODO: rewrite the object literal using object property shorthand
+// the code below is the object literal:
 // users.push({
 //     name: name,
 //     email: email,
 //     languages: languages
 // });
 
+// the code below is using object property shorthand:
 users.push({
-   name,
-   email,
-   languages
+   name, //this is a const
+   email, //this is a const
+   languages //this is a const
 });
 
-// TODO: replace `var` with `let` in the following variable declarations
-var emails = [];
-var names = [];
+// DONE TODO: replace `var` with `let` in the following variable declarations
+let emails = [];
+let names = [];
 
-// TODO: rewrite the following using arrow functions
-users.forEach(function(user) {
-    return emails.push(user.email);
-});
-users.forEach(function(user) {
-    return names.push(user.name);
-});
+// DONE TODO: rewrite the following using arrow functions
+// users.forEach(function(user) {
+//     return emails.push(user.email);
+// });
+// users.forEach(function(user) {
+//     return names.push(user.name);
+// });
 
-// TODO: replace `var` with `let` in the following declaration
-var developers = [];
+users.forEach((user) => emails.push(user.email));
+// console.log(users);
+// console.log(emails);
+
+users.forEach((user) => names.push(user.name));
+// console.log(names);
+
+
+// DONE TODO: replace `var` with `let` in the following declaration
+let developers = [];
 users.forEach(function(user) {
     // TODO: rewrite the code below to use object destructuring assignment
     //       note that you can also use destructuring assignment in the function
     //       parameter definition
-    const name = user.name;
-    const email = user.email;
-    const languages = user.languages;
+    // const name = user.name;
+    // const email = user.email;
+    // const languages = user.languages;
+
+    const {name, email, languages} = user;
+    // console.log(name);
+    // console.log(email);
+    // console.log(languages);
+
+        // curriculum notes: new way
+    // const person = {name: 'codeup', age: 4};
+    // const {name, age} = person;
+    // console.log(name); // 'codeup'
+    // console.log(age); // 4
+
 
     // TODO: rewrite the assignment below to use template strings
     developers.push(name + '\'s email is ' + email + name + ' knows ' + languages.join(', '));
