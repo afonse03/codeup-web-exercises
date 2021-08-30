@@ -69,9 +69,20 @@
 
 // THIRD MINI EXERCISE
 
-    /* TODO: Create a new endpoint on https://hookbin.com/ and use fetch to send some POST requests.
-        Experiment with sending different shapes of data in the body of the request.
-     */
+    // TODO: Create a new endpoint on https://hookbin.com/ and use fetch to send some POST requests. Experiment with sending different shapes of data in the body of the request.
+
+    fetch('https://hookb.in/eKpJ7j3nNWhlwQmmw1b8', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            username: "amanda",
+            password: "pass5689"
+        })
+    })
+        .then(console.log)
+        .catch(console.log);
 
 </script>
 </body>
