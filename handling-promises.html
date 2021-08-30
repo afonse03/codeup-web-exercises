@@ -1,0 +1,78 @@
+<!--8/30/21-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promises Mini Exercises</title>
+</head>
+<body>
+
+<script>
+    "use strict";
+
+    // returns a promise that resolves after two seconds if the UTC second is even and rejects if it is odd
+    function successIfEvenUTCSecond() {
+        return new Promise((resolve, reject) => {
+            setTimeout(function() {
+                const second = new Date().getUTCSeconds();
+                if (second % 2 === 0) {
+                    resolve(second);
+                } else {
+                    reject(second);
+                }
+            }, 2000);
+        });
+    }
+
+    const aPromise = successIfEvenUTCSecond();
+
+
+// FIRST MINI EXERCISE
+    // TODO: if aPromise resolves, console.log 'VALUE_HERE is an even number!'
+
+    aPromise.then(function(value) {
+        console.log(`${value} is an even number!`);
+    });
+
+    // TODO: if aPromise rejects, console.error 'VALUE_HERE is an odd number!'
+
+    aPromise.catch(function(value) {
+        console.log(`${value} is an odd number!`);
+    });
+
+    /* this is how you correctly chain:
+    aPromise
+        .then(function(value) {
+            console.log(`${value} is an even number!`);
+        })
+        .catch(function(value) {
+            console.log(`${value} is an odd number!`);
+      });
+     */
+
+// SECOND MINI EXERCISE
+
+    // TODO: make a GET request using fetch to the Programming Quote API url and log just the text of the random quote.
+
+
+    const quoteUrl = `http://quotes.stormconsultancy.co.uk/random.json`;
+
+    fetch(quoteUrl)
+        .then(response => response.json())
+        .then(function(data) {
+            console.log(data.quote);
+        })
+        .catch(error => {
+            console.log(error);
+        });
+
+// THIRD MINI EXERCISE
+
+    /* TODO: Create a new endpoint on https://hookbin.com/ and use fetch to send some POST requests.
+        Experiment with sending different shapes of data in the body of the request.
+     */
+
+</script>
+</body>
+</html>
