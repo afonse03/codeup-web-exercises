@@ -14,20 +14,99 @@
   <input id="number-input" type="number" min="0" max="100">
   <button id="add-btn">Add</button>
 </form>
+<!--<nav>-->
+<!--  <div class='container'>-->
+<!--    <div>-->
+<!--      <span class='menu-button'>Menu</span>-->
+<!--      <span class='login-button'>Login</span>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</nav>-->
+<!--<div className='nav-menu' id="nav-dropdown">-->
+<!--  <div className='container'>-->
+<!--    <ul>-->
+<!--      <li>Shoes</li>-->
+<!--      <li>Women's Shoes</li>-->
+<!--      <li>Men's Shoes</li>-->
+<!--      <li>Shoe Accessories</li>-->
+<!--      <li>Wholesale</li>-->
+<!--    </ul>-->
+<!--    <ul>-->
+<!--      <li>Contact</li>-->
+<!--      <li>Twitter</li>-->
+<!--      <li>Facebook</li>-->
+<!--      <li>Instagram</li>-->
+<!--      <li>Email</li>-->
+<!--    </ul>-->
+<!--  </div>-->
+<!--</div>-->
 
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script>
-  $("#add-btn").on("click", function(e) {
-    e.preventDefault();
-    $("#number-input")
+  $(document).on("click","#add-btn", function() {
+    // e.preventDefault();
+    console.log('alert');
+  })
+
+  const output = document.getElementById('number-output');
+  const input = document.getElementById('number-input');
+  $('.menu-button').on("mouseenter", () => {
+    // console.log('alert');
+    $("#nav-dropdown").hide();
+
+  });
+          $(".menu-button").on("mouseleave", function() { //.on is a handler
+            $("#nav-dropdown").show();
+
+          })
+$('#add-btn').on("mouseenter", function() {
+  $('#add-btn').animate({
+    fontSize: '30px'
+  }, 200);
+});
+  $('#add-btn').on("mouseleave", function() {
+    $('#add-btn').animate({
+      fontSize: '18px'
+    }, 200);
   });
 
 
 
 
 
+
+
+
+
+  // $('.menu-button').on("click", () => {
+  //   // console.log('alert');
+  //   $('li').last().fadeToggle(); //jquery effects: .toggle allowed the li to appear and disappear //.fadeToggle & .slideToggle
+  //
+  // })
+
+  // let myName = 'amanda';
+  // let myJob = 'developer';
+  // console.log(`my name is ${myName} and I'm a ${myJob} from El Paso`);
+
+
+  /*TODO: add functionality such that the number in the input will be added to the total in the h1 when the button is clicked
+        No changes to the existing HTML is needed, other than adding jQuery or JavaScript.
+<h1 id="number-output">0</h1>
+<form>
+  <input id="number-input" type="number" min="0" max="100">
+  <button id="add-btn">Add</button>
+</form>
+   */
+  //justin's solution:
+  document.querySelector('#add-btn').addEventListener('click', function(e) {
+    e.preventDefault();
+    let currentNum = Number(document.querySelector('#number-output').innerText);
+    let numberToAdd = Number(document.querySelector('#number-input').value);
+    document.querySelector('#number-output').innerText = currentNum + numberToAdd;
+  });
+
+
 </script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossOrigin="anonymous"></script>
 </body>
 </html>

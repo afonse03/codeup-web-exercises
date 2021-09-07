@@ -11,32 +11,69 @@
 <body>
 <h1>Konami Code</h1>
 
-<script src="/js/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script>
   "use strict";
+  /*
+  Steps:
+  1. Keep track of what the user is typing
+  2. Use the jquery keyup event which is called every time the user presses a key
+  3. Use a variable that stores
+  4. Clear input whenever user types something invalid
+  5. To check if the input is invalid
+   */
 
-  // $(document).keyup(function(event){
-  //   console.log(event.keyCode);
-  // });
+  const correctInput = "3838404037393739666513";
+  var currentInput = "";
+  // create an empty variable to keep track of user inputs
 
-  //Albert's solution:
-  $(document).ready(function() {
-    var code = [];
-    var konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
-    $(document).keyup(function() {
-      code.push(event.keyCode);
-      if (code.slice(code.length - 11, code.length) === konamiCode) {
-        alert("You now have 30 extra lives!")
-      }
-    });
+  // calls event listener whenever user presses a key
+  $(document).keyup(function(event){
+    // since this is a keyboard event we can use the keycode property of the event to check which key the user typed
+    // update user input every time a key is pressed
+    currentInput += event.keyCode;
+    console.log(currentInput);
+    // check if currentInput has any characters that are not in the correctInput
+    // check if every character in the currentInput is in the correctInput
+
+    // input is valid if the correctInput includes all of the currentInput
+    // valid is a boolean
+    const valid = correctInput.includes(currentInput);
+
+    // input is correct if correctInput matches the currentInput
+    const correct = correctInput === currentInput;
+
+    if (correct) {
+      alert("You have added 30 lives!");
+    }
+    if (!valid) {
+      alert("Invalid code. Start over.");
+      // set input back to empty so user can start typing the code again
+      currentInput = "";
+    }
+    $("#input").html(currentInput);
   });
 
 
+
+
+  //Albert's solution:
+  // $(document).ready(function() {
+  //   var code = [];
+  //   var konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
+  //   $(document).keyup(function() {
+  //     code.push(event.keyCode);
+  //     if (code.slice(code.length - 11, code.length) === konamiCode) {
+  //       alert("You now have 30 extra lives!")
+  //     }
+  //   });
+  // });
+
+</script>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</script>
+
 </body>
 </html>
