@@ -1,3 +1,5 @@
+"use strict";
+
 const users = [
     {
         id: 1,
@@ -96,11 +98,15 @@ console.log(longestEmail);
 
 
 // TODO: use .reduce to get the list of user's names in a single string. Ex: your instructors are: ryan, luis, zach, fernando, and justin
-
-
-
-
-
+let allNames = users.reduce((total, nextName, index, array) => {
+    if (index === array.length - 1 ) {
+        total.push(nextName.name);
+        return `Your instructors are: ${total.join(", ")}.`;
+    } else {
+        total.push(nextName.name);
+        return total;
+    }
+}, []);
 
 
 
