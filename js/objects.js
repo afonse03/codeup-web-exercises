@@ -162,4 +162,17 @@ console.log(books[1].Author.lastName);
      * - Create a function named `showBookInfo` that accepts a book object and outputs the information described above. Refactor your loop to use your `showBookInfo` function.
      */
 
+    function createBook(bookTitle, bookAuthor){
+        return {
+            title: bookTitle,
+            author: {firstName: bookAuthor.firstName, lastName: bookAuthor.lastName}
+        }
+    }
+
+    function showBookInfo(book, index){
+        console.log("Book # " + (index + 1));
+        console.log("Title: " + book.title);
+        console.log("Author: " + book.author.firstName + " " + book.lastName);
+    }
+
 })();
