@@ -42,9 +42,9 @@ const users = [
 
 // DONE TODO: replace the `var` keyword with `const`, then try to reassign a variable
 // declared as `const`
-const name = 'your_name_here';
-const email = '';
-const languages = [];
+const name = 'amanda';
+const email = 'amanda.m.fonseca03@gmail.com';
+const languages = ['javascript', 'html', 'css'];
 
 // DONE TODO: rewrite the object literal using object property shorthand
 // the code below is the object literal:
@@ -53,6 +53,9 @@ const languages = [];
 //     email: email,
 //     languages: languages
 // });
+
+const user = {name, email, languages};
+users.push(user);
 
 // the code below is using object property shorthand:
 users.push({
@@ -84,7 +87,7 @@ users.forEach((user) => names.push(user.name));
 // DONE TODO: replace `var` with `let` in the following declaration
 let developers = [];
 users.forEach(function(user) {
-    // TODO: rewrite the code below to use object destructuring assignment
+    // DONE TODO: rewrite the code below to use object destructuring assignment
     //       note that you can also use destructuring assignment in the function
     //       parameter definition
     // const name = user.name;
@@ -103,17 +106,18 @@ users.forEach(function(user) {
     // console.log(age); // 4
 
 
-    // TODO: rewrite the assignment below to use template strings
+    // DONE TODO: rewrite the assignment below to use template strings
     developers.push(name + '\'s email is ' + email + name + ' knows ' + languages.join(', '));
 });
 
-// TODO: Use `let` for the following variable
-var list = '<ul>';
+// DONE TODO: Use `let` for the following variable
+let list = '<ul>';
 
-// TODO: rewrite the following loop to use a for..of loop
-developers.forEach(function (developer) {
+// DONE TODO: rewrite the following loop to use a for..of loop
+// developers.forEach(function (developer) {
+for (const developer of developers) {
 
-    // TODO: rewrite the assignment below to use template strings
+    // DONE TODO: rewrite the assignment below to use template strings
     list += '<li>' + developer + '</li>';
-});
-list += '</ul>';
+    list += '</ul>';
+}
